@@ -30,7 +30,7 @@ connection = MongoClient(
     '{port}/{namespace}'.format(**connection_params)
 )
 
-db = connection.neaea
+db = connection.amharic
 
 userMsg = db.messages
 errors = db.errors
