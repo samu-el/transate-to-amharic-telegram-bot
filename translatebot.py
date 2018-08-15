@@ -4,15 +4,7 @@ import time
 import telepot
 from telepot.loop import MessageLoop
 from telepot.namedtuple import InlineQueryResultArticle, InputTextMessageContent
-from pprint import pprint
-import re
-import requests
-import json
-import urllib
-import urllib.request
-from bs4 import BeautifulSoup
 import datetime
-from emoji import emojize
 
 import pymongo
 from pymongo import MongoClient
