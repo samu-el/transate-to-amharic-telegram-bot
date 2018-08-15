@@ -70,7 +70,7 @@ def on_inline_query(msg):
                 translation = get_translation(query_string)
                 articles = [InlineQueryResultArticle(
                     id='abc',
-                    title="ተተርጉሟል",
+                    title=translation,
                     input_message_content=InputTextMessageContent(
                         message_text=translation
                     )
