@@ -8,7 +8,9 @@ import datetime
 
 import pymongo
 from pymongo import MongoClient
+from googletrans import Translator
 
+translator = Translator()
 
 APITOKEN = "<API-TOKEN>"
 bot = telepot.Bot(APITOKEN)
@@ -105,7 +107,8 @@ def get_translation(text):
 
     text = text.strip()
     try:
-        pass
+        result = translator.translate(text, dest='am')
+        return result.text
     except Exception as e:
     	errors.insert_one({'error':str(e)})
     	log("Get Translation Error: "+str(e))
