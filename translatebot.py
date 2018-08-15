@@ -1,5 +1,6 @@
 #! python3
 import sys
+import os
 import time
 import telepot
 from telepot.loop import MessageLoop
@@ -12,16 +13,16 @@ from googletrans import Translator
 
 translator = Translator()
 
-APITOKEN = "<API-TOKEN>"
+APITOKEN = os.environ["TELEGRAM_API"]
 bot = telepot.Bot(APITOKEN)
 answerer = telepot.helper.Answerer(bot)
 
 connection_params = {
-    'user': '<USERNAME>',
-    'password': '<PASSWORD>',
-    'host': '<example.mlab.com>',
-    'port': 777,
-    'namespace': '<DATABASE-NAME>',
+    'user': os.environ["MONGO_USER"],
+    'password': os.environ["MONGO_PASS"],
+    'host': os.environ["MONGO_HOST"],
+    'port': int(os.environ['MONGO_PORT']),
+    'namespace': os.environ["DB_NAME"],
 }
 
 connection = MongoClient(
